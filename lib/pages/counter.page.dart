@@ -14,28 +14,6 @@ class _CounterPageState extends State<CounterPage> {
       appBar: AppBar(
         title: Text("Counter"),
       ),
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          FloatingActionButton(
-            onPressed: () {
-              setState(() {
-                --counter;
-              });
-            },
-            child: Icon(Icons.remove),
-          ),
-          SizedBox(width: 10,),
-          FloatingActionButton(
-            onPressed: () {
-              setState(() {
-                ++counter;
-              });
-            },
-            child: Icon(Icons.add),
-          )
-        ],
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -43,6 +21,16 @@ class _CounterPageState extends State<CounterPage> {
             Text(
               "Counter Value => $counter", style: Theme.of(context).textTheme.bodyText2,
             ),
+            ElevatedButton(onPressed: (){
+              setState(() {
+                ++counter;
+              });
+            }, child: Text("Add")),
+            IconButton(onPressed: (){
+              setState(() {
+                --counter;
+              });
+            }, icon: Icon(Icons.remove))
           ],
         ),
       ),
