@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_flutter_app/widgets/drawer.item.widget.dart';
 
 class MyDrawer extends StatelessWidget {
 
@@ -25,25 +26,14 @@ class MyDrawer extends StatelessWidget {
                 ],
               )
           ),
-          ListTile(
-            onTap: (){
-              Navigator.pop(context);
-              Navigator.pushNamed(context, "/");
-            },
-            leading: Icon(Icons.home, color: Colors.deepOrange,),
-            trailing: Icon(Icons.arrow_right, color: Colors.deepOrange,),
-            title: Text("Home", style: TextStyle(fontSize: 18, color: Colors.deepOrange),),
-          ),
-          Divider(color: Colors.deepOrange,),
-          ListTile(
-            onTap: (){
-              Navigator.pop(context);
-              Navigator.pushNamed(context, "/counter");
-            },
-            leading: Icon(Icons.contacts, color: Colors.deepOrange,),
-            trailing: Icon(Icons.arrow_right, color: Colors.deepOrange,),
-            title: Text("Counter", style: TextStyle(fontSize: 18, color: Colors.deepOrange),),
-          )
+          DrawerItemWidget("Home", (){
+            Navigator.pop(context);
+            Navigator.pushNamed(context, "/");
+          }),
+          DrawerItemWidget("Counter", (){
+            Navigator.pop(context);
+            Navigator.pushNamed(context, "/counter");
+          })
         ],
       ),
     );
