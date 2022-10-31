@@ -18,16 +18,6 @@ class HomePage extends StatelessWidget {
               "Home Page ...",
               style: Theme.of(context).textTheme.bodyText2,
             ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
-              onPressed: () {
-                Navigator.pushNamed(context, "/counter");
-              },
-              child: Text(
-                "Next",
-                style: TextStyle(fontSize: 22, color: Colors.white),
-              ),
-            )
           ],
         ),
       ),
