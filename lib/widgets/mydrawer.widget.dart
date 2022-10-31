@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_flutter_app/global/global.parameter.dart';
 import 'package:my_flutter_app/widgets/drawer.header.widget.dart';
 import 'package:my_flutter_app/widgets/drawer.item.widget.dart';
 
@@ -10,11 +11,9 @@ class MyDrawer extends StatelessWidget {
       child: ListView(
         children: [
           MyDrawerHeaderWidget(),
-          DrawerItemWidget("Home", "/"),
-          DrawerItemWidget("Counter", "/counter"),
-          DrawerItemWidget("Contacts", "/contact"),
-          DrawerItemWidget("Meteo", "/meteo"),
-          DrawerItemWidget("Gallery", "/gallery")
+          ...(GlobalParameters.menus).map((item) =>
+            DrawerItemWidget(item['title'], item['route'], item["icon"])
+          )
         ],
       ),
     );

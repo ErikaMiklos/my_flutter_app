@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class DrawerItemWidget extends StatelessWidget {
   String itemTitle;
   String route;
+  Icon icon;
 
-  DrawerItemWidget(this.itemTitle, this.route);
+  DrawerItemWidget(this.itemTitle, this.route, this.icon);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class DrawerItemWidget extends StatelessWidget {
         Navigator.pop(context);
         Navigator.pushNamed(context, route);
       },
-      leading: Icon(Icons.home, color: Colors.deepOrange,),
+      leading: icon,
       trailing: Icon(Icons.arrow_right, color: Colors.deepOrange,),
       title: Text(itemTitle, style: TextStyle(fontSize: 18, color: Colors.deepOrange),),
     );
