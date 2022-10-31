@@ -26,14 +26,11 @@ class MyDrawer extends StatelessWidget {
                 ],
               )
           ),
-          DrawerItemWidget("Home", (){
-            Navigator.pop(context);
-            Navigator.pushNamed(context, "/");
-          }),
-          DrawerItemWidget("Counter", (){
-            Navigator.pop(context);
-            Navigator.pushNamed(context, "/counter");
-          })
+          DrawerItemWidget("Home", "/"),
+          DrawerItemWidget("Counter", "/counter"),
+          DrawerItemWidget("Contacts", "/contact"),
+          DrawerItemWidget("Meteo", "/meteo"),
+          DrawerItemWidget("Gallery", "/gallery")
         ],
       ),
     );
