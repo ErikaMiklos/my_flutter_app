@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_flutter_app/widgets/drawer.header.widget.dart';
 import 'package:my_flutter_app/widgets/drawer.item.widget.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -8,24 +9,7 @@ class MyDrawer extends StatelessWidget {
     return Drawer(
       child: ListView(
         children: [
-          DrawerHeader(
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      colors: [Colors.deepOrange, Colors.white])),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CircleAvatar(
-                    radius: 40,
-                    backgroundImage: AssetImage("images/logo.png"),
-                  ),
-                  CircleAvatar(
-                    radius: 60,
-                    backgroundImage: AssetImage("images/profile.jpg"),
-                  ),
-                ],
-              )
-          ),
+          MyDrawerHeaderWidget(),
           DrawerItemWidget("Home", "/"),
           DrawerItemWidget("Counter", "/counter"),
           DrawerItemWidget("Contacts", "/contact"),
